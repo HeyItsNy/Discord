@@ -23,33 +23,25 @@ client.on('ready', async () => {
   console.log(`${client.user.tag} - rich presence started!`);
 
   const r = new Discord.RichPresence()
-    .setApplicationId('')
+    .setApplicationId('854160088427135008')
     .setType('STREAMING')
-    .setURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ') //Must be a youtube video link 
-    .setState('Recording')
-    .setName('')
-    .setDetails(`Valorant [${formatTime()}]`)
-    .setStartTimestamp(Date.now())
- .setAssetsLargeImage('') //You can put links in tenor or discord and etc.
-    .setAssetsLargeText('Boring') //Text when you hover the Large image
-    .setAssetsSmallImage('') //You can put links in tenor or discord and etc.
-    .setAssetsSmallText('Twitch') //Text when you hover the Small image
-    .addButton('Watch', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-    .addButton('Donate', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    .setURL('https://twitch.tv/developer') //Must be a youtube video link 
+    .setState('♡')
+    .setName('♡')
+    .setDetails(`♡`)
+ .setAssetsLargeImage('https://cdn.discordapp.com/attachments/1179932579810525275/1186731620829515906/IMG_8902.jpg?ex=659450f2&is=6581dbf2&hm=0e21096f13916a1eaab9224db1daa3e577a1b820797f2db07951131fa4098034&') //You can put links in tenor or discord and etc.
+    .setAssetsLargeText('') //Text when you hover the Large image
+    .setAssetsSmallImage('https://cdn.discordapp.com/attachments/1179932579810525275/1186731500515893290/IMG_8900.png?ex=659450d6&is=6581dbd6&hm=04640cdff1b59c5007aa242a952115f2cb3e228652885c3cb8c49420256a55c6&') //You can put links in tenor or discord and etc.
+    .setAssetsSmallText('꒰ა ♡ ໒꒱')
+
+                        //Text when you hover the Small image
+    .addButton('♡','https://youtu.be/GVZqDCG2VrA?si=7Ys3eiTTFqB53kLQ')
+    .addButton('♡','https://youtu.be/p8FDl_tMs4Y?si=btWpNH0wuLrM3_x2');
 
   client.user.setActivity(r);
-  client.user.setPresence({ status: "dnd" }); //dnd, online, idle, offline
+  client.user.setPresence({ status: "offline" }); //dnd, online, idle, offline
 
-  let prevTime = null;
-  setInterval(() => {
-    const newTime = formatTime();
-    if (newTime !== prevTime) {
-      const newDetails = ` [${newTime}]`;
-      r.setDetails(newDetails);
-      client.user.setActivity(r);
-      prevTime = newTime;
-    }
-  }, 1000); // Update every second
+  
 });
 
 const mySecret = process.env['TOKEN'];
